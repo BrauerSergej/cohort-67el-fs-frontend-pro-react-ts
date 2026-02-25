@@ -5,5 +5,4 @@ export interface ButtonProps {
   isRed?: boolean;
     // Шаг 1 - создаём disabled props
   disabled?: boolean;
-
 }
