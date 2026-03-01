@@ -1,38 +1,49 @@
 import Button from "components/Button/Button";
 import Input from "components/Input/Input";
 import styled from "@emotion/styled";
-import { Homework_08_Page_Wrapper } from "./styles";
+import {
+  Homework_08_Page_Wrapper,
+  FormElementContainer,
+  Paragraph,
+} from "./styles";
 
 function Homework_08() {
   return (
     <Homework_08_Page_Wrapper>
+      <Paragraph>Homework 08</Paragraph>
       <Input
-        id="standard"
-        label="Standard Input"
-        placeholder="I am working"
-        name="standard"
+        id="simple_input"
+        label="Simple Input"
+        placeholder="Enter message"
+        name="simple"
         disabled={false}
         error={undefined}
       />
       <Input
-        id="disabled-input"
+        id="error_input"
+        name="error"
+        label="Error Input"
+        placeholder="Enter message"
+        disabled={false}
+        error="This field is required"
+      />
+      <Input
+        id="disabled_input"
         label="Disabled Input"
-        placeholder="You cannot type here"
+        placeholder="Enter message"
         name="disabled"
         disabled={true}
         error={undefined}
       />
-      <Input
-        id="error-input"
-        name="error"
-        label="Input with Error"
-        placeholder="Check my border"
-        disabled={false}
-        error="Some error"
-      />
-      <Button name="Default Button" />
-      <Button disabled name="Login" type="submit" />
-      <Button isRed name="Login" type="submit" />
+      <FormElementContainer>
+        <Button name="Simple button" />
+      </FormElementContainer>
+      <FormElementContainer>
+        <Button isRed name="Delete button" type="submit" />
+      </FormElementContainer>
+      <FormElementContainer>
+        <Button disabled name="Disabled button" type="submit" />
+      </FormElementContainer>
     </Homework_08_Page_Wrapper>
   );
 }

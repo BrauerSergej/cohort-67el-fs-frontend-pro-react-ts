@@ -20,7 +20,7 @@ function App() {
 
       {/* Homeworks */}
       {/* <Homework_06/> */}
-      {/* <Homework_07 /> */}
+      {/* <Homework_07/> */}
       <Homework_08 />
     </>
   );

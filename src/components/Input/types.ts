@@ -5,6 +5,6 @@ export interface InputProps {
   placeholder: string;
   label: string;
   // Шаг 1 - создаём disabled props
-  disabled: boolean;
-  error: undefined | string;
+  disabled?: boolean;
+  error?: undefined | string;
 }
