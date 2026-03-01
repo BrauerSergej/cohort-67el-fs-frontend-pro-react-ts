@@ -14,6 +14,8 @@ function Input({
   // Шаг 2 - добавляем props
   disabled = false,
   error = undefined,
+  value,
+  onChange
 }: InputProps) {
   return (
     <InputWrapper>
@@ -27,6 +29,8 @@ function Input({
         name={name}
         type={type}
         placeholder={placeholder}
+        value={value}
+        onChange={onChange}
       />
       {/* Вставляем error в качестве props */}
       {/* Скрываем в тех инпутах контейнер в которых он не нужен */}
