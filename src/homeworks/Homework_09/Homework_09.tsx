@@ -1,63 +1,68 @@
-import styled from "@emotion/styled";
-
 import {
   PageWrapper,
-  NotesList,
-  NoteCard,
-  HomeworkWrapper,
   Title,
+  NoteForm,
+  ButtonControl,
+  NoteTitle,
+  Notes,
+  NoteItem,
 } from "./styles";
 import Input from "components/Input/Input";
 import Button from "components/Button/Button";
 import { type ChangeEvent, useState } from "react";
+import { v4 } from "uuid";
 
 function Homework_09() {
   // 1. noteText — это "черновик". То, что мы видим в инпуте прямо сейчас.
   const [noteText, setNoteText] = useState<string>("");
+  // 2. notes — это "архив". Массив, где хранятся все уже добавленные заметки.
+  const [savedNotes, setSavedNotes] = useState<string[]>([]);
+
   const changeNote = (event: ChangeEvent<HTMLInputElement>) => {
     setNoteText(event.target.value);
   };
-  console.log(noteText);
+  // console.log(noteText);
 
-  // 2. notes — это "архив". Массив, где хранятся все уже добавленные заметки.
-  const [notes, setNotes] = useState<string[]>([]);
-
-  // Срабатывает при клике на "Add". Переносит текст из черновика в архив.
-  const handleAddNote = () => {
+  const onSaveNote = (event: any) => {
+    event.preventDefault();
+    // prevValue === savedNotes в момент вызова функции setSavedNotes
     if (noteText.trim() !== "") {
-      // Добавляем новое значение в массив, не удаляя старые
-      setNotes([...notes, noteText]);
-      // Очищаем инпут (черновик), чтобы он снова стал пустым
+      setSavedNotes((prevValue: string[]) => {
+        console.log(prevValue);
+        return [...prevValue, noteText];
+      });
       setNoteText("");
     }
   };
 
+  // Допустим savedNotes = ["Coocking", "Shopping"]
+  // Наша задача вернуть новый массив notesList который будет иметь вид(условно говоря) = [<NoteItem>Coocking</NoteItem>, <NoteItem>Shopping</NoteItem>]
+  const notesList = savedNotes.map((value: string) => {
+    return <NoteItem key={v4()}>{value}</NoteItem>;
+  });
+
   return (
     <PageWrapper>
-      <HomeworkWrapper>
-        <Title>Homework 09</Title>
-        <NotesList>
-          {notes.map((note, index) => (
-            <NoteCard key={`${index} ${note}`}>{note}</NoteCard>
-          ))}
-        </NotesList>
-
+      <Title>Homework 09</Title>
+      <NoteForm onSubmit={onSaveNote}>
         <Input
-          id="input-id"
-          name="input"
+          id="todo-input"
+          name="todo"
           type="text"
           placeholder="Enter your note"
           label="Notes"
           value={noteText}
+          // Ловим событие
           onChange={changeNote}
         />
-
-        <Button
-          name="Add"
-          onClick={handleAddNote}
-          disabled={!noteText.trim()}
-        />
-      </HomeworkWrapper>
+        <ButtonControl>
+          <Button name="Add" type="submit" disabled={!noteText.trim()} />
+        </ButtonControl>
+      </NoteForm>
+      <Notes>
+        <NoteTitle>Your notes</NoteTitle>
+        {notesList}
+      </Notes>
     </PageWrapper>
   );
 }
