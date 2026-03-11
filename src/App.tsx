@@ -28,8 +28,6 @@ function App() {
       {/* <Lesson_08 /> */}
       {/* <Lesson_09 /> */}
       {/* <Lesson_10 /> */}
-      {/* <Lesson_11 /> */}
-      {/* <Lesson_12 /> */}
 
       {/* Homeworks */}
       {/* <Homework_06/> */}
