@@ -6,6 +6,10 @@ import About from "pages/EmployeeApp/About/About";
 import LogIn from "pages/EmployeeApp/LogIn/LogIn";
 import ContactUs from "pages/EmployeeApp/ContactUs/ContactUs";
 import GlobalStyles from "styles/GlobalStyles";
+import Clients from "pages/EmployeeApp/Clients/Clients";
+import FaceBook from "pages/EmployeeApp/Clients/Facebook/Facebook";
+import Instagram from "pages/EmployeeApp/Clients/Instagram/Instagram";
+import LinkedIn from "pages/EmployeeApp/Clients/LinkedIn/LinkedIn";
 
 // lessons
 // import Lesson_06 from "./lessons/Lesson_06/Lesson_06";
@@ -23,7 +27,7 @@ import GlobalStyles from "styles/GlobalStyles";
 // import Homework_08 from "homeworks/Homework_08/Homework_08";
 // import Homework_09 from "homeworks/Homework_09/Homework_09";
 // import Homework_10 from "homeworks/Homework_10/Homework_10";
-import Homework_12 from "homeworks/Homework_12/Homework_12";
+// import Homework_12 from "homeworks/Homework_12/Homework_12";
 
 function App() {
   return (
@@ -38,6 +42,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contactUs" element={<ContactUs />} />
+          <Route path="clients" element={<Clients />} />
+          <Route path="clients/facebook" element={<FaceBook />} />
+          <Route path="clients/instagram" element={<Instagram />} />
+          <Route path="clients/linkedin" element={<LinkedIn />} />
           <Route path="/login" element={<LogIn />} />
           {/* * - обозначает любой путь  */}
           <Route path="*" element="Page Not Found" />
