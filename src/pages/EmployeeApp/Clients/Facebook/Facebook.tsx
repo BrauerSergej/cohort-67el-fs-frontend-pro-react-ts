@@ -1,24 +1,11 @@
-import { PageWrapper, Title, Description, ButtonControl } from "./styles";
-import { useNavigate } from "react-router-dom";
-import Button from "components/Button/Button";
+import ClientTemplate from "../components/ClientTemplate/ClientTemplate";
 
 function FaceBook() {
-  const navigate = useNavigate();
-  const goBack = () => {
-    navigate(-1);
-  };
-
   return (
-    <PageWrapper>
-      <Title>Facebook</Title>
-      <Description>Facebook is a social media company.</Description>
-      <Description>
-        It helps people communicate and share content online.
-      </Description>
-      <ButtonControl>
-        <Button onClick={goBack} name="Go back" />
-      </ButtonControl>
-    </PageWrapper>
+    <ClientTemplate>
+      Facebook is a social media company. It helps people communicate and share
+      content online.
+    </ClientTemplate>
   );
 }
 

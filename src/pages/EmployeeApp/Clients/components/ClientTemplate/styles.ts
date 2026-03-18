@@ -23,3 +23,14 @@ export const ButtonControl = styled.div`
     width: 120px;
   }
 `;
+
+export const ClientLink = styled.a`
+  font-size: 20px;
+  font-weight: normal;
+  text-decoration: none;
+  color: blue;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
