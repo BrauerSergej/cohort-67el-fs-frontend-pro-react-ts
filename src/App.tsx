@@ -1,5 +1,6 @@
 // Иппортируем BrowserRouter, Route, Routes для настройки маршрутизации
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ROUTES } from "components/constants/routes";
 import Layout from "components/Layout/Layout";
 import Home from "pages/EmployeeApp/Home/Home";
 import About from "pages/EmployeeApp/About/About";
@@ -20,6 +21,7 @@ import LinkedIn from "pages/EmployeeApp/Clients/LinkedIn/LinkedIn";
 // import Lesson_11 from "lessons/Lesson_11_University_Project/Lesson_11";
 // import Lesson_12 from "lessons/Lesson_12/Lesson_12";
 // import Lesson_13 from "lessons/Lesson_13/Lesson_13";
+import Lesson_14 from "lessons/Lesson_14/Lesson_14";
 
 // homeworks
 // import Homework_06 from "./homeworks/Homework_06/Homework_06";
@@ -33,24 +35,25 @@ function App() {
   return (
     //
     <BrowserRouter>
-      <GlobalStyles />
-      <Layout>
+      {/* <GlobalStyles /> */}
+      {/* <Layout> */}
         {/* В Routes будем складывать различные страницы - маршруты*/}
-        <Routes>
+        {/* <Routes> */}
           {/* Route - маршрут - принимает в себя две props 1. path, 2. element*/}
           {/* element принимает в качестве значения какуюто страницу т.е компонент */}
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contactUs" element={<ContactUs />} />
-          <Route path="clients" element={<Clients />} />
-          <Route path="clients/facebook" element={<FaceBook />} />
-          <Route path="clients/instagram" element={<Instagram />} />
-          <Route path="clients/linkedin" element={<LinkedIn />} />
-          <Route path="/login" element={<LogIn />} />
+          {/* Путь это ссылка на какойто url по которому будет распологаться какойто компонент  */}
+          {/* <Route path={ROUTES.HOME} element={<Home />} /> */}
+          {/* <Route path={ROUTES.ABOUT} element={<About />} /> */}
+          {/* <Route path={ROUTES.CONTACT_US} element={<ContactUs />} /> */}
+          {/* <Route path={ROUTES.CLIENTS} element={<Clients />} /> */}
+          {/* <Route path={ROUTES.FACEBOOK} element={<FaceBook />} /> */}
+          {/* <Route path={ROUTES.INSTAGRAM} element={<Instagram />} /> */}
+          {/* <Route path={ROUTES.LINKEDIN} element={<LinkedIn />} /> */}
+          {/* <Route path={ROUTES.LOGIN} element={<LogIn />} /> */}
           {/* * - обозначает любой путь  */}
-          <Route path="*" element="Page Not Found" />
-        </Routes>
-      </Layout>
+          {/* <Route path={ROUTES.NOT_FOUND} element="Page Not Found" /> */}
+        {/* </Routes> */}
+      {/* </Layout> */}
       {/* Lessons */}
       {/* <Lesson_06 /> */}
       {/* <Lesson_07 /> */}
@@ -59,6 +62,7 @@ function App() {
       {/* <Lesson_10 /> */}
       {/* <Lesson_11 /> */}
       {/* <Lesson_12 /> */}
+      <Lesson_14 />
 
       {/* Homeworks */}
       {/* <Homework_06/> */}
