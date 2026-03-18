@@ -30,6 +30,7 @@ import Lesson_14 from "lessons/Lesson_14/Lesson_14";
 // import Homework_09 from "homeworks/Homework_09/Homework_09";
 // import Homework_10 from "homeworks/Homework_10/Homework_10";
 // import Homework_12 from "homeworks/Homework_12/Homework_12";
+import Homework_14 from "homeworks/Homework_14/Homework_14";
 
 function App() {
   return (
@@ -62,7 +63,7 @@ function App() {
       {/* <Lesson_10 /> */}
       {/* <Lesson_11 /> */}
       {/* <Lesson_12 /> */}
-      <Lesson_14 />
+      {/* <Lesson_14 /> */}
 
       {/* Homeworks */}
       {/* <Homework_06/> */}
@@ -72,6 +73,8 @@ function App() {
       {/* <Homework_09 /> */}
       {/* <Homework_10 /> */}
       {/* <Homework_12 /> */}
+      <Homework_14 />
+      
     </BrowserRouter>
   );
 }
