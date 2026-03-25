@@ -7,6 +7,7 @@ const globalAppStyles = css`
   body {
     height: 100%;
     margin: 0;
+    font-family: "Lato", sans-serif;
   }
   h1,
   h2,

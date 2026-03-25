@@ -49,7 +49,11 @@ function Main() {
       <MainWrapper>
         <MainTitle>Main Component</MainTitle>
         <Button name="Get User Data" onClick={getUserData} />
-        <Section />
+        {/* Props Drilling */}
+        {/* Компонент Main из своего state передаёт в Section userData */}
+        {/* В компонент Section передаём userData */}
+        {/* <Section userData={userData}/> */}
+        <Section/>
       </MainWrapper>
     </MainContext.Provider>
   );
